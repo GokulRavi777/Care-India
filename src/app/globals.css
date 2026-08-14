@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #060913;
+  --color-dark-surface: #0B1120;
+  --color-dark-card: #0F172A;
+  --color-dark-card-hover: #162038;
+  --color-dark-border: rgba(255, 255, 255, 0.08);
+  --color-dark-border-glow: rgba(0, 242, 254, 0.3);
+  
+  --color-neon-cyan: #00F2FE;
+  --color-neon-teal: #06D6A0;
+  --color-neon-blue: #38BDF8;
+  --color-neon-emerald: #10B981;
+  --color-neon-amber: #F59E0B;
+  --color-neon-rose: #F43F5E;
+  --color-neon-purple: #A855F7;
+  
+  --color-ink-primary: #F8FAFC;
+  --color-ink-secondary: #94A3B8;
+  --color-ink-muted: #64748B;
+
+  /* Legacy semantic mappings for seamless compatibility */
+  --color-paper: #060913;
+  --color-paper-raised: #0F172A;
+  --color-ink: #F8FAFC;
+  --color-ink-soft: #94A3B8;
+  --color-teal: #00F2FE;
+  --color-teal-deep: #0284C7;
+  --color-marigold: #F59E0B;
+  --color-sage: #10B981;
+  --color-rust: #F43F5E;
+  --color-line: rgba(255, 255, 255, 0.08);
+
+  --font-serif: var(--font-roboto-slab), Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+:root {
+  --background: #060913;
+  --foreground: #F8FAFC;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 242, 254, 0.12), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 85% 60%, rgba(168, 85, 247, 0.07), transparent 60%),
+    radial-gradient(ellipse 50% 30% at 15% 70%, rgba(6, 214, 160, 0.06), transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Butter-Smooth 60FPS/120FPS GPU Marquee Keyframes */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  animation: marquee 52s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Gradient edge mask for seamless visual transitions */
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+}
+
+/* Scanner Laser Sweep Animation */
+@keyframes scanLaser {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 96%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.8;
+  }
+}
+
+.animate-laser {
+  animation: scanLaser 2.2s ease-in-out infinite;
+  will-change: top, opacity;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2), inset 0 0 15px rgba(0, 242, 254, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.4), inset 0 0 20px rgba(0, 242, 254, 0.15);
+  }
+}
+
+.glow-box {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
+/* Custom Scrollbar for Sleek Tech Look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060913;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
