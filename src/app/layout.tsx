@@ -27,11 +27,11 @@ export const metadata: Metadata = {
   description: "Real-time AI hospital bill auditor, government scheme eligibility engine, and insurance claim readiness auditor for India.",
   icons: {
     icon: [
-      { url: "/logo.png", type: "image/png" },
-      { url: "/icon.png", type: "image/png" }
+      { url: "/logo.png?v=3", type: "image/png" },
+      { url: "/icon.png?v=3", type: "image/png" }
     ],
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    shortcut: "/logo.png?v=3",
+    apple: "/logo.png?v=3",
   },
 };
 
@@ -54,6 +54,11 @@ export default function RootLayout({
       lang="en"
       className={`${robotoSlab.variable} ${inter.variable} ${ibmPlexMono.variable} h-full antialiased dark`}
     >
+      <head>
+        <link rel="icon" href="/logo.png?v=3" type="image/png" sizes="any" />
+        <link rel="shortcut icon" href="/logo.png?v=3" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png?v=3" />
+      </head>
       <body className="min-h-full flex flex-col bg-[#060913] text-[#F8FAFC] font-sans selection:bg-[#00F2FE]/30 selection:text-[#00F2FE]">
         {/* Top Moving Healthcare News Marquee Bar */}
         <div className="w-full bg-[#0B132B]/90 border-b border-cyan-500/20 py-2 px-3 overflow-hidden select-none z-50 backdrop-blur-md">
