@@ -25,6 +25,14 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Care India — AI Healthcare Affordability & Claims Navigator",
   description: "Real-time AI hospital bill auditor, government scheme eligibility engine, and insurance claim readiness auditor for India.",
+  icons: {
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png" }
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 const HEALTHCARE_NEWS = [
