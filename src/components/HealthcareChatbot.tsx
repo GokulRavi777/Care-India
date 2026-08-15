@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 interface Message {
   id: string;
@@ -149,9 +150,15 @@ I can assist you with:
           className="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-cyan-500 to-teal-400 text-[#070C1A] rounded-full shadow-[0_0_25px_rgba(0,242,254,0.4)] hover:shadow-[0_0_35px_rgba(0,242,254,0.6)] hover:scale-105 transition-all duration-300 group cursor-pointer border border-cyan-300/40"
           aria-label="Open Healthcare Navigator Assistant"
         >
-          <div className="relative">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#070C1A] absolute -top-0.5 -right-0.5 animate-ping"></span>
-            <span className="text-xl">🩺</span>
+          <div className="relative w-7 h-7 rounded-full bg-white/95 p-0.5 flex items-center justify-center shadow-inner overflow-hidden">
+            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 absolute -top-0.5 -right-0.5 animate-ping z-10"></span>
+            <Image
+              src="/logo.png"
+              alt="Care India Logo"
+              width={28}
+              height={28}
+              className="object-contain w-full h-full"
+            />
           </div>
           <div className="flex flex-col items-start pr-1">
             <span className="text-xs font-serif font-black tracking-tight leading-none">AI Medtech Navigator</span>
@@ -171,8 +178,14 @@ I can assist you with:
           {/* Header */}
           <div className="bg-[#070B16] border-b border-white/[0.08] px-4 py-3.5 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500/20 to-teal-500/10 border border-cyan-500/40 flex items-center justify-center text-base shadow-[0_0_12px_rgba(0,242,254,0.2)]">
-                🩺
+              <div className="w-9 h-9 rounded-xl bg-white/95 p-1 border border-cyan-500/40 flex items-center justify-center shadow-[0_0_12px_rgba(0,242,254,0.2)] overflow-hidden">
+                <Image
+                  src="/logo.png"
+                  alt="Care India Logo"
+                  width={36}
+                  height={36}
+                  className="object-contain w-full h-full"
+                />
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -87,8 +88,15 @@ export default function LoginPage() {
       <div className="w-full max-w-md bg-[#0D1426]/90 backdrop-blur-xl border border-white/[0.08] hover:border-cyan-500/30 rounded-3xl p-8 sm:p-10 shadow-2xl relative z-10 transition-all">
         {/* Header Branding */}
         <div className="flex flex-col items-center text-center mb-8">
-          <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center font-serif font-black text-cyan-300 text-xl mb-3 shadow-[0_0_15px_rgba(0,242,254,0.2)]">
-            CI
+          <div className="w-16 h-16 rounded-2xl bg-white/95 p-1.5 border border-cyan-500/40 flex items-center justify-center mb-3 shadow-[0_0_20px_rgba(0,242,254,0.25)]">
+            <Image
+              src="/logo.png"
+              alt="Care India Logo"
+              width={64}
+              height={64}
+              className="object-contain w-full h-full"
+              priority
+            />
           </div>
           <h2 className="font-serif font-bold text-2xl text-white tracking-tight">Care India Portal</h2>
           <p className="text-xs text-slate-400 font-mono mt-1">Sign in to access verified healthcare navigation</p>

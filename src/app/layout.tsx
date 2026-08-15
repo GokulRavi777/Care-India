@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto_Slab, Inter, IBM_Plex_Mono } from "next/font/google";
+import Link from "next/link";
+import Image from "next/image";
 import "./globals.css";
 import HeaderAuth from "@/components/HeaderAuth";
 import HealthcareChatbot from "@/components/HealthcareChatbot";
@@ -76,16 +78,23 @@ export default function RootLayout({
         <header className="sticky top-0 z-40 w-full bg-[#090E1D]/80 backdrop-blur-xl border-b border-white/[0.08]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             {/* Brand Logo & Tagline */}
-            <div className="flex items-center gap-3.5">
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-teal-400 rounded-xl blur opacity-60 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative w-10 h-10 bg-[#0A1020] border border-cyan-500/40 text-cyan-400 rounded-xl flex items-center justify-center font-serif font-black text-lg shadow-inner">
-                  CI
+            <Link href="/" className="flex items-center gap-3.5 group">
+              <div className="relative">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-emerald-400 rounded-xl blur opacity-50 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative w-10 h-10 bg-white/95 rounded-xl p-1 flex items-center justify-center border border-cyan-500/40 shadow-inner group-hover:scale-105 transition-transform">
+                  <Image
+                    src="/logo.png"
+                    alt="Care India Logo"
+                    width={40}
+                    height={40}
+                    className="object-contain w-full h-full"
+                    priority
+                  />
                 </div>
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
-                  <span className="font-serif font-bold text-lg leading-none tracking-tight text-white">Care India</span>
+                  <span className="font-serif font-bold text-lg leading-none tracking-tight text-white group-hover:text-cyan-300 transition-colors">Care India</span>
                   <span className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-[9px] font-mono font-extrabold px-1.5 py-0.5 rounded tracking-wider uppercase">
                     AI MEDTECH
                   </span>
@@ -94,7 +103,7 @@ export default function RootLayout({
                   Healthcare Affordability &amp; Claims Navigator
                 </span>
               </div>
-            </div>
+            </Link>
 
             {/* Right Header Navigation & Actions */}
             <div className="flex items-center gap-4">
